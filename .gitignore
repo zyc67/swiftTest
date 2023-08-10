@@ -1,0 +1,12 @@
+*/swiftDemo.xcodeproj/xcuserdata/
+*/swiftDemo.xcodeproj/project.xcworkspace/xcuserdata/
+*/swiftDemo.xcworkspace
+*/Pods/Pods.xcodeproj/xcuserdata/
+.DS_Store
+*/.DS_Store
+
+*/Pods/
+*/Podfile.lock
+#!Podfile
+
+*/.idea/

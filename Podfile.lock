@@ -1,0 +1,52 @@
+PODS:
+  - Alamofire (5.6.4)
+  - CYLTabBarController (1.29.2):
+    - CYLTabBarController/Core (= 1.29.2)
+  - CYLTabBarController/Core (1.29.2)
+  - KeychainAccess (4.2.2)
+  - Kingfisher (7.6.2)
+  - MJRefresh (3.7.5)
+  - ObjectMapper (4.2.0)
+  - SnapKit (5.6.0)
+  - SwiftyJSON (5.0.1)
+  - SwiftyRSA (1.7.0):
+    - SwiftyRSA/ObjC (= 1.7.0)
+  - SwiftyRSA/ObjC (1.7.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CYLTabBarController
+  - KeychainAccess
+  - Kingfisher
+  - MJRefresh
+  - ObjectMapper
+  - SnapKit
+  - SwiftyJSON
+  - SwiftyRSA
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CYLTabBarController
+    - KeychainAccess
+    - Kingfisher
+    - MJRefresh
+    - ObjectMapper
+    - SnapKit
+    - SwiftyJSON
+    - SwiftyRSA
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  CYLTabBarController: db44b5901a28693a8a4279e4721b3aafdd36c178
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
+
+PODFILE CHECKSUM: 694b8ba1895c6f110747eefb396be20ff0852d0e
+
+COCOAPODS: 1.12.1
