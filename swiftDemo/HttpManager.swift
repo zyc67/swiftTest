@@ -29,11 +29,11 @@ class HttpManager {
     }
     
     @discardableResult func post(path: String, method: HTTPMethod = .post, parameters: Parameters?, headers: HTTPHeaders, completed: @escaping NetworkRequestCompletion) -> DataRequest {
-        print("-----------------POST REQUEST BEGIN-----------------")
-        print("path: \(path)")
-        print("method: \(method.rawValue)")
-        print("parameters: \(getParameters(parameters: parameters))")
-        print("headers: \(headers)")
+        ZYCLog("-----------------POST REQUEST BEGIN-----------------")
+        ZYCLog("path: \(path)")
+        ZYCLog("method: \(method.rawValue)")
+        ZYCLog("parameters: \(getParameters(parameters: parameters))")
+        ZYCLog("headers: \(headers)")
         
         return sessionManager.request(path, method: method, parameters: getParameters(parameters: parameters), encoding: JSONEncoding(), headers: headers).responseData { response in
             switch response.result {
@@ -42,7 +42,7 @@ class HttpManager {
             case .failure(let error):
                 completed(.failure(error))
             }
-            print("-----------------POST REQUEST END-----------------")
+            ZYCLog("-----------------POST REQUEST END-----------------")
         }
     }
     

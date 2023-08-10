@@ -46,7 +46,9 @@ class NetWorkAPI {
         HttpManager.shared.post(path: url, parameters: parameters, headers: getHeaders(host: "login.qianyanapp.com", authFlag: "v2", loginSign: nil, authorization: nil)) { response in
             switch response {
             case .success(let data):
-                success(data.dataToDictionary!)
+                let dict: [String: Any] = data.dataToDictionary!
+                ZYCLog(dict)
+                success(dict)
             case .failure(let error):
                 failure(error)
             }
@@ -128,9 +130,9 @@ class NetWorkAPI {
         HttpManager.shared.post(path: Interface.v2SmsGetverifyCodeInterface.getPath(), parameters: parameters, headers: getHeaders(host: "sms.qianyanapp.com", authFlag: "v2", loginSign: nil, authorization: nil)) { response in
             switch response {
             case .success(let data):
-                print(data.dataToDictionary as Any)
+                ZYCLog(data.dataToDictionary as Any)
             case .failure(let error):
-                print(error)
+                ZYCLog(error)
             }
         }
     }
