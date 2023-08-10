@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let mainVc = ZYCTabbarController()
+        let mainVc = BaseTabBarController()
         self.window = UIWindow()
         self.window?.frame = UIScreen.main.bounds
-        self.window?.rootViewController = ZYCNavigationController(rootViewController: mainVc)
+        self.window?.rootViewController = BaseNavigationController(rootViewController: mainVc)
         self.window?.makeKeyAndVisible()
         
         return true

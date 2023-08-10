@@ -5,6 +5,7 @@
 //  Created by weather on 2023/5/31.
 //
 import UIKit
+import SnapKit
 
 extension UIDevice {
     /// 安全区域

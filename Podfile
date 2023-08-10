@@ -9,13 +9,15 @@ target 'swiftDemo' do
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'ObjectMapper'
   pod 'SnapKit'
   pod 'Kingfisher'
   pod 'MJRefresh'
   pod 'CYLTabBarController'
   pod 'SwiftyRSA'
   pod 'KeychainAccess'
+  pod 'Toast-Swift'
+  pod 'JXPagingView/Paging'
+  pod 'JXSegmentedView'
 
   target 'swiftDemoTests' do
     inherit! :search_paths

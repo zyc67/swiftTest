@@ -1,15 +1,14 @@
 //
-//  ZYCTabbarController.swift
+//  BaseTabBarController.swift
 //  swiftDemo
 //
-//  Created by weather on 2023/3/24.
+//  Created by weather on 2023/8/10.
 //
 
 import UIKit
 import CYLTabBarController
 
-class ZYCTabbarController: CYLTabBarController {
-    
+class BaseTabBarController: CYLTabBarController {
     lazy var publishButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "tabbar_publish"), for: .normal)
@@ -59,12 +58,12 @@ class ZYCTabbarController: CYLTabBarController {
     }
     
     func vcs() -> [UIViewController] {
-        let home = ZYCNavigationController(rootViewController: ZYCHomeViewController())
-        let communityView = ZYCNavigationController(rootViewController: ZYCCommunityViewController())
-        let publish = ZYCNavigationController(rootViewController: ZYCPublishViewController())
-        let message = ZYCNavigationController(rootViewController: ZYCMessageViewController())
-        let me = ZYCNavigationController(rootViewController: ZYCMeViewController())
-        return [home, communityView, publish, message, me]
+        let home = BaseNavigationController(rootViewController: HomeViewController())
+        let clubView = BaseNavigationController(rootViewController: ClubViewController())
+        let publish = BaseNavigationController(rootViewController: PublishViewController())
+        let message = BaseNavigationController(rootViewController: MessageViewController())
+        let me = BaseNavigationController(rootViewController: MeViewController())
+        return [home, clubView, publish, message, me]
     }
     
     func attrs() -> [[String: String]] {
@@ -100,4 +99,6 @@ class ZYCTabbarController: CYLTabBarController {
         
         return [home, communityView, publish, message, me]
     }
+
+
 }

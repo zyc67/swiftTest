@@ -15,16 +15,18 @@
 		1847ED2729AC8EB300BCE50C /* swiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847ED2629AC8EB300BCE50C /* swiftDemoTests.swift */; };
 		1847ED3129AC8EB300BCE50C /* swiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847ED3029AC8EB300BCE50C /* swiftDemoUITests.swift */; };
 		1847ED3329AC8EB300BCE50C /* swiftDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847ED3229AC8EB300BCE50C /* swiftDemoUITestsLaunchTests.swift */; };
-		18AF982729CD3EDF00F2F8CF /* ZYCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF982629CD3EDF00F2F8CF /* ZYCNavigationController.swift */; };
-		18AF982929CD3EF300F2F8CF /* ZYCTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF982829CD3EF300F2F8CF /* ZYCTabbarController.swift */; };
 		18AF982B29CD40E500F2F8CF /* ZYCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF982A29CD40E500F2F8CF /* ZYCHomeViewController.swift */; };
-		18AF982D29CD412700F2F8CF /* ZYCCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF982C29CD412700F2F8CF /* ZYCCommunityViewController.swift */; };
-		18AF982F29CD414500F2F8CF /* ZYCPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF982E29CD414500F2F8CF /* ZYCPublishViewController.swift */; };
-		18AF983129CD415B00F2F8CF /* ZYCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF983029CD415B00F2F8CF /* ZYCMessageViewController.swift */; };
-		18AF983329CD416900F2F8CF /* ZYCMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF983229CD416900F2F8CF /* ZYCMeViewController.swift */; };
 		2302AA052A53D03200ABABE3 /* MZRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2302AA042A53D03200ABABE3 /* MZRSA.swift */; };
 		2328F58F2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328F58E2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift */; };
 		234159502A847AE900E6F218 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341594F2A847AE900E6F218 /* Log.swift */; };
+		234159572A84B81B00E6F218 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159562A84B81B00E6F218 /* BaseNavigationController.swift */; };
+		234159592A84B85200E6F218 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159582A84B85200E6F218 /* BaseTabBarController.swift */; };
+		2341595B2A84B8CD00E6F218 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341595A2A84B8CD00E6F218 /* BaseViewController.swift */; };
+		2341595D2A84B8F000E6F218 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341595C2A84B8F000E6F218 /* HomeViewController.swift */; };
+		2341595F2A84B90500E6F218 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341595E2A84B90500E6F218 /* ClubViewController.swift */; };
+		234159612A84B91000E6F218 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159602A84B91000E6F218 /* MessageViewController.swift */; };
+		234159632A84B91A00E6F218 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159622A84B91A00E6F218 /* MeViewController.swift */; };
+		234159662A84B9A200E6F218 /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159652A84B9A200E6F218 /* PublishViewController.swift */; };
 		236D46ED2A4E6A6700F26916 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D46EC2A4E6A6700F26916 /* DateUtils.swift */; };
 		236D46EF2A4E6E0300F26916 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D46EE2A4E6E0300F26916 /* StringUtils.swift */; };
 		236D46F12A4ECB3800F26916 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D46F02A4ECB3800F26916 /* DataUtils.swift */; };
@@ -81,16 +83,19 @@
 		1847ED2C29AC8EB300BCE50C /* swiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1847ED3029AC8EB300BCE50C /* swiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftDemoUITests.swift; sourceTree = "<group>"; };
 		1847ED3229AC8EB300BCE50C /* swiftDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		18AF982629CD3EDF00F2F8CF /* ZYCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCNavigationController.swift; sourceTree = "<group>"; };
-		18AF982829CD3EF300F2F8CF /* ZYCTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCTabbarController.swift; sourceTree = "<group>"; };
 		18AF982A29CD40E500F2F8CF /* ZYCHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCHomeViewController.swift; sourceTree = "<group>"; };
-		18AF982C29CD412700F2F8CF /* ZYCCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCCommunityViewController.swift; sourceTree = "<group>"; };
-		18AF982E29CD414500F2F8CF /* ZYCPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCPublishViewController.swift; sourceTree = "<group>"; };
-		18AF983029CD415B00F2F8CF /* ZYCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCMessageViewController.swift; sourceTree = "<group>"; };
-		18AF983229CD416900F2F8CF /* ZYCMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCMeViewController.swift; sourceTree = "<group>"; };
 		2302AA042A53D03200ABABE3 /* MZRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZRSA.swift; sourceTree = "<group>"; };
 		2328F58E2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCNetWorkTools.swift; sourceTree = "<group>"; };
 		2341594F2A847AE900E6F218 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		234159562A84B81B00E6F218 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		234159582A84B85200E6F218 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		2341595A2A84B8CD00E6F218 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2341595C2A84B8F000E6F218 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2341595E2A84B90500E6F218 /* ClubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
+		234159602A84B91000E6F218 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		234159622A84B91A00E6F218 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		234159652A84B9A200E6F218 /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
+		234159672A84C09C00E6F218 /* swiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		236D46EC2A4E6A6700F26916 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		236D46EE2A4E6E0300F26916 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		236D46F02A4ECB3800F26916 /* DataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
@@ -189,30 +194,22 @@
 		1847ED0E29AC8EB200BCE50C /* swiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				234159512A84B74200E6F218 /* Base */,
 				2341594E2A847AD100E6F218 /* Utils */,
 				23D5DDAC2A67C179003AE711 /* Model */,
+				234159522A84B75F00E6F218 /* Home */,
+				234159532A84B76D00E6F218 /* Club */,
+				234159642A84B98800E6F218 /* Publish */,
+				234159542A84B78700E6F218 /* Message */,
+				234159552A84B7B300E6F218 /* Me */,
 				1847ED0F29AC8EB200BCE50C /* AppDelegate.swift */,
 				1847ED1329AC8EB200BCE50C /* ViewController.swift */,
 				1847ED1529AC8EB200BCE50C /* Main.storyboard */,
 				1847ED1829AC8EB300BCE50C /* Assets.xcassets */,
 				1847ED1A29AC8EB300BCE50C /* LaunchScreen.storyboard */,
 				1847ED1D29AC8EB300BCE50C /* Info.plist */,
-				2302AA042A53D03200ABABE3 /* MZRSA.swift */,
-				18AF982629CD3EDF00F2F8CF /* ZYCNavigationController.swift */,
-				18AF982829CD3EF300F2F8CF /* ZYCTabbarController.swift */,
 				18AF982A29CD40E500F2F8CF /* ZYCHomeViewController.swift */,
-				18AF982C29CD412700F2F8CF /* ZYCCommunityViewController.swift */,
-				18AF982E29CD414500F2F8CF /* ZYCPublishViewController.swift */,
-				18AF983029CD415B00F2F8CF /* ZYCMessageViewController.swift */,
-				18AF983229CD416900F2F8CF /* ZYCMeViewController.swift */,
-				238816A72A26D7990004432B /* ZYCCommon.swift */,
-				2328F58E2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift */,
-				23A456F92A3DA54100A2310F /* ZYCNetWork.swift */,
-				236D46EC2A4E6A6700F26916 /* DateUtils.swift */,
-				236D46EE2A4E6E0300F26916 /* StringUtils.swift */,
-				236D46F02A4ECB3800F26916 /* DataUtils.swift */,
-				23E2243E2A56B78C008AC83A /* HttpManager.swift */,
-				23E224402A56BB6E008AC83A /* NetWorkAPI.swift */,
+				234159672A84C09C00E6F218 /* swiftDemo-Bridging-Header.h */,
 			);
 			path = swiftDemo;
 			sourceTree = "<group>";
@@ -237,9 +234,68 @@
 		2341594E2A847AD100E6F218 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2302AA042A53D03200ABABE3 /* MZRSA.swift */,
 				2341594F2A847AE900E6F218 /* Log.swift */,
+				238816A72A26D7990004432B /* ZYCCommon.swift */,
+				236D46EC2A4E6A6700F26916 /* DateUtils.swift */,
+				236D46EE2A4E6E0300F26916 /* StringUtils.swift */,
+				236D46F02A4ECB3800F26916 /* DataUtils.swift */,
+				2328F58E2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift */,
+				23A456F92A3DA54100A2310F /* ZYCNetWork.swift */,
+				23E2243E2A56B78C008AC83A /* HttpManager.swift */,
+				23E224402A56BB6E008AC83A /* NetWorkAPI.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		234159512A84B74200E6F218 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				234159562A84B81B00E6F218 /* BaseNavigationController.swift */,
+				234159582A84B85200E6F218 /* BaseTabBarController.swift */,
+				2341595A2A84B8CD00E6F218 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		234159522A84B75F00E6F218 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2341595C2A84B8F000E6F218 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		234159532A84B76D00E6F218 /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				2341595E2A84B90500E6F218 /* ClubViewController.swift */,
+			);
+			path = Club;
+			sourceTree = "<group>";
+		};
+		234159542A84B78700E6F218 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				234159602A84B91000E6F218 /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		234159552A84B7B300E6F218 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				234159622A84B91A00E6F218 /* MeViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		234159642A84B98800E6F218 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				234159652A84B9A200E6F218 /* PublishViewController.swift */,
+			);
+			path = Publish;
 			sourceTree = "<group>";
 		};
 		23D5DDAC2A67C179003AE711 /* Model */ = {
@@ -515,11 +571,15 @@
 			files = (
 				23D5DDC92A67CE37003AE711 /* RankList.swift in Sources */,
 				2328F58F2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift in Sources */,
+				234159632A84B91A00E6F218 /* MeViewController.swift in Sources */,
 				234159502A847AE900E6F218 /* Log.swift in Sources */,
 				1847ED1429AC8EB200BCE50C /* ViewController.swift in Sources */,
+				234159662A84B9A200E6F218 /* PublishViewController.swift in Sources */,
 				23E224412A56BB6E008AC83A /* NetWorkAPI.swift in Sources */,
+				2341595D2A84B8F000E6F218 /* HomeViewController.swift in Sources */,
 				1847ED1029AC8EB200BCE50C /* AppDelegate.swift in Sources */,
 				23D5DDBF2A67CE37003AE711 /* WorldSkin.swift in Sources */,
+				2341595B2A84B8CD00E6F218 /* BaseViewController.swift in Sources */,
 				23D5DDC52A67CE37003AE711 /* CandyHole.swift in Sources */,
 				23E2243F2A56B78C008AC83A /* HttpManager.swift in Sources */,
 				23D5DDC82A67CE37003AE711 /* Club.swift in Sources */,
@@ -527,22 +587,20 @@
 				2302AA052A53D03200ABABE3 /* MZRSA.swift in Sources */,
 				236D46ED2A4E6A6700F26916 /* DateUtils.swift in Sources */,
 				23A456FA2A3DA54100A2310F /* ZYCNetWork.swift in Sources */,
-				18AF983129CD415B00F2F8CF /* ZYCMessageViewController.swift in Sources */,
+				234159592A84B85200E6F218 /* BaseTabBarController.swift in Sources */,
+				234159572A84B81B00E6F218 /* BaseNavigationController.swift in Sources */,
 				236D46EF2A4E6E0300F26916 /* StringUtils.swift in Sources */,
+				2341595F2A84B90500E6F218 /* ClubViewController.swift in Sources */,
 				23D5DDC32A67CE37003AE711 /* Candy.swift in Sources */,
 				236D46F12A4ECB3800F26916 /* DataUtils.swift in Sources */,
 				23D5DDBE2A67CE37003AE711 /* ImClub.swift in Sources */,
 				18AF982B29CD40E500F2F8CF /* ZYCHomeViewController.swift in Sources */,
+				234159612A84B91000E6F218 /* MessageViewController.swift in Sources */,
 				23D5DDBD2A67CE37003AE711 /* Safe.swift in Sources */,
-				18AF982729CD3EDF00F2F8CF /* ZYCNavigationController.swift in Sources */,
-				18AF982D29CD412700F2F8CF /* ZYCCommunityViewController.swift in Sources */,
-				18AF982F29CD414500F2F8CF /* ZYCPublishViewController.swift in Sources */,
 				23D5DDC02A67CE37003AE711 /* Num.swift in Sources */,
 				23D5DDC22A67CE37003AE711 /* BindingInfo.swift in Sources */,
 				23D5DDCA2A67CE37003AE711 /* Theme.swift in Sources */,
 				23D5DDC62A67CE37003AE711 /* Skin.swift in Sources */,
-				18AF983329CD416900F2F8CF /* ZYCMeViewController.swift in Sources */,
-				18AF982929CD3EF300F2F8CF /* ZYCTabbarController.swift in Sources */,
 				23D5DDC42A67CE37003AE711 /* Gold.swift in Sources */,
 				238816A82A26D7990004432B /* ZYCCommon.swift in Sources */,
 				23D5DDC12A67CE37003AE711 /* User.swift in Sources */,
@@ -742,7 +800,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zyc.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "swiftDemo/swiftDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -776,7 +834,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zyc.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "swiftDemo/swiftDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,33 +8,6 @@
 import UIKit
 import SwiftyRSA
 import SwiftyJSON
-import ObjectMapper
-
-struct MemberInfoExtrasModel: Mappable {
-//    var data: [String: Any]?
-    var collect: Int!
-    var bean: Int!
-    var sms: Int!
-    
-    var msg: String!
-    var code: Int!
-    
-    init?(map: ObjectMapper.Map) {
-        
-    }
-    
-    
-    mutating func mapping(map: ObjectMapper.Map) {
-//        data <- map["data"]
-        collect <- map["data.collect"]
-        bean <- map["data.bean"]
-        sms <- map["data.sms"]
-        msg <- map["msg"]
-        code <- map["code"]
-    }
-    
-   
-}
 
 
 class ZYCHomeViewController: UIViewController {
