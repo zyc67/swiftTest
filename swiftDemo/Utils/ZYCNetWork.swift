@@ -27,3 +27,5 @@ let APPID = "qianyan"
 
 let netWorkKey = "cd3a99904763cc22c24b381a50625d3c"
 
+let netWorkV1Key = "qy_0_23"
+

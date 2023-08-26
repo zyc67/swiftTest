@@ -1,292 +1,182 @@
 //
-//	User.swift
+//	UserInfo.swift
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
+import SwiftyJSON
 
-
-class User : NSObject, NSCoding{
-
-	var actTime : String!
-	var balance : Int!
-	var bindingInfo : BindingInfo!
-	var blackUserIdList : [AnyObject]!
-	var candy : Candy!
-	var candyHoles : [CandyHole]!
-	var club : Club!
-	var count : Int!
-	var gold : Gold!
-	var ifGuard : Int!
-	var list : [AnyObject]!
-	var num : Num!
-	var phoneStatus : Int!
-	var rankList : [RankList]!
-	var remarkName : String!
-	var safe : Safe!
-	var secondToken : String!
-	var shop : AnyObject!
-	var skin : Skin!
-	var theme : Theme!
-	var userInfo : UserInfo!
-	var vipEndtime : String!
-	var worldSkin : WorldSkin!
-
-
-	/**
-	 * Instantiate the instance using the passed dictionary values to set the properties values
-	 */
-	init(fromDictionary dictionary: [String:Any]){
-		actTime = dictionary["actTime"] as? String
-		balance = dictionary["balance"] as? Int
-		if let bindingInfoData = dictionary["bindingInfo"] as? [String:Any]{
-			bindingInfo = BindingInfo(fromDictionary: bindingInfoData)
-		}
-		blackUserIdList = dictionary["blackUserIdList"] as? [AnyObject]
-		if let candyData = dictionary["candy"] as? [String:Any]{
-			candy = Candy(fromDictionary: candyData)
-		}
-		candyHoles = [CandyHole]()
-		if let candyHolesArray = dictionary["candyHoles"] as? [[String:Any]]{
-			for dic in candyHolesArray{
-				let value = CandyHole(fromDictionary: dic)
-				candyHoles.append(value)
-			}
-		}
-		if let clubData = dictionary["club"] as? [String:Any]{
-			club = Club(fromDictionary: clubData)
-		}
-		count = dictionary["count"] as? Int
-		if let goldData = dictionary["gold"] as? [String:Any]{
-			gold = Gold(fromDictionary: goldData)
-		}
-		ifGuard = dictionary["ifGuard"] as? Int
-		list = dictionary["list"] as? [AnyObject]
-		if let numData = dictionary["num"] as? [String:Any]{
-			num = Num(fromDictionary: numData)
-		}
-		phoneStatus = dictionary["phoneStatus"] as? Int
-		rankList = [RankList]()
-		if let rankListArray = dictionary["rankList"] as? [[String:Any]]{
-			for dic in rankListArray{
-				let value = RankList(fromDictionary: dic)
-				rankList.append(value)
-			}
-		}
-		remarkName = dictionary["remarkName"] as? String
-		if let safeData = dictionary["safe"] as? [String:Any]{
-			safe = Safe(fromDictionary: safeData)
-		}
-		secondToken = dictionary["secondToken"] as? String
-		shop = dictionary["shop"] as? AnyObject
-		if let skinData = dictionary["skin"] as? [String:Any]{
-			skin = Skin(fromDictionary: skinData)
-		}
-		if let themeData = dictionary["theme"] as? [String:Any]{
-			theme = Theme(fromDictionary: themeData)
-		}
-		if let userInfoData = dictionary["userInfo"] as? [String:Any]{
-			userInfo = UserInfo(fromDictionary: userInfoData)
-		}
-		vipEndtime = dictionary["vipEndtime"] as? String
-		if let worldSkinData = dictionary["worldSkin"] as? [String:Any]{
-			worldSkin = WorldSkin(fromDictionary: worldSkinData)
-		}
-	}
-
-	/**
-	 * Returns all the available property values in the form of [String:Any] object where the key is the approperiate json key and the value is the value of the corresponding property
-	 */
-	func toDictionary() -> [String:Any]
-	{
-		var dictionary = [String:Any]()
-		if actTime != nil{
-			dictionary["actTime"] = actTime
-		}
-		if balance != nil{
-			dictionary["balance"] = balance
-		}
-		if bindingInfo != nil{
-			dictionary["bindingInfo"] = bindingInfo.toDictionary()
-		}
-		if blackUserIdList != nil{
-			dictionary["blackUserIdList"] = blackUserIdList
-		}
-		if candy != nil{
-			dictionary["candy"] = candy.toDictionary()
-		}
-		if candyHoles != nil{
-			var dictionaryElements = [[String:Any]]()
-			for candyHolesElement in candyHoles {
-				dictionaryElements.append(candyHolesElement.toDictionary())
-			}
-			dictionary["candyHoles"] = dictionaryElements
-		}
-		if club != nil{
-			dictionary["club"] = club.toDictionary()
-		}
-		if count != nil{
-			dictionary["count"] = count
-		}
-		if gold != nil{
-			dictionary["gold"] = gold.toDictionary()
-		}
-		if ifGuard != nil{
-			dictionary["ifGuard"] = ifGuard
-		}
-		if list != nil{
-			dictionary["list"] = list
-		}
-		if num != nil{
-			dictionary["num"] = num.toDictionary()
-		}
-		if phoneStatus != nil{
-			dictionary["phoneStatus"] = phoneStatus
-		}
-		if rankList != nil{
-			var dictionaryElements = [[String:Any]]()
-			for rankListElement in rankList {
-				dictionaryElements.append(rankListElement.toDictionary())
-			}
-			dictionary["rankList"] = dictionaryElements
-		}
-		if remarkName != nil{
-			dictionary["remarkName"] = remarkName
-		}
-		if safe != nil{
-			dictionary["safe"] = safe.toDictionary()
-		}
-		if secondToken != nil{
-			dictionary["secondToken"] = secondToken
-		}
-		if shop != nil{
-			dictionary["shop"] = shop
-		}
-		if skin != nil{
-			dictionary["skin"] = skin.toDictionary()
-		}
-		if theme != nil{
-			dictionary["theme"] = theme.toDictionary()
-		}
-		if userInfo != nil{
-			dictionary["userInfo"] = userInfo.toDictionary()
-		}
-		if vipEndtime != nil{
-			dictionary["vipEndtime"] = vipEndtime
-		}
-		if worldSkin != nil{
-			dictionary["worldSkin"] = worldSkin.toDictionary()
-		}
-		return dictionary
-	}
-
-    /**
-    * NSCoding required initializer.
-    * Fills the data from the passed decoder
-    */
-    @objc required init(coder aDecoder: NSCoder)
-	{
-         actTime = aDecoder.decodeObject(forKey: "actTime") as? String
-         balance = aDecoder.decodeObject(forKey: "balance") as? Int
-         bindingInfo = aDecoder.decodeObject(forKey: "bindingInfo") as? BindingInfo
-         blackUserIdList = aDecoder.decodeObject(forKey: "blackUserIdList") as? [AnyObject]
-         candy = aDecoder.decodeObject(forKey: "candy") as? Candy
-         candyHoles = aDecoder.decodeObject(forKey :"candyHoles") as? [CandyHole]
-         club = aDecoder.decodeObject(forKey: "club") as? Club
-         count = aDecoder.decodeObject(forKey: "count") as? Int
-         gold = aDecoder.decodeObject(forKey: "gold") as? Gold
-         ifGuard = aDecoder.decodeObject(forKey: "ifGuard") as? Int
-         list = aDecoder.decodeObject(forKey: "list") as? [AnyObject]
-         num = aDecoder.decodeObject(forKey: "num") as? Num
-         phoneStatus = aDecoder.decodeObject(forKey: "phoneStatus") as? Int
-         rankList = aDecoder.decodeObject(forKey :"rankList") as? [RankList]
-         remarkName = aDecoder.decodeObject(forKey: "remarkName") as? String
-         safe = aDecoder.decodeObject(forKey: "safe") as? Safe
-         secondToken = aDecoder.decodeObject(forKey: "secondToken") as? String
-         shop = aDecoder.decodeObject(forKey: "shop") as? AnyObject
-         skin = aDecoder.decodeObject(forKey: "skin") as? Skin
-         theme = aDecoder.decodeObject(forKey: "theme") as? Theme
-         userInfo = aDecoder.decodeObject(forKey: "userInfo") as? UserInfo
-         vipEndtime = aDecoder.decodeObject(forKey: "vipEndtime") as? String
-         worldSkin = aDecoder.decodeObject(forKey: "worldSkin") as? WorldSkin
-
-	}
-
-    /**
-    * NSCoding required method.
-    * Encodes mode properties into the decoder
-    */
-    @objc func encode(with aCoder: NSCoder)
-	{
-		if actTime != nil{
-			aCoder.encode(actTime, forKey: "actTime")
-		}
-		if balance != nil{
-			aCoder.encode(balance, forKey: "balance")
-		}
-		if bindingInfo != nil{
-			aCoder.encode(bindingInfo, forKey: "bindingInfo")
-		}
-		if blackUserIdList != nil{
-			aCoder.encode(blackUserIdList, forKey: "blackUserIdList")
-		}
-		if candy != nil{
-			aCoder.encode(candy, forKey: "candy")
-		}
-		if candyHoles != nil{
-			aCoder.encode(candyHoles, forKey: "candyHoles")
-		}
-		if club != nil{
-			aCoder.encode(club, forKey: "club")
-		}
-		if count != nil{
-			aCoder.encode(count, forKey: "count")
-		}
-		if gold != nil{
-			aCoder.encode(gold, forKey: "gold")
-		}
-		if ifGuard != nil{
-			aCoder.encode(ifGuard, forKey: "ifGuard")
-		}
-		if list != nil{
-			aCoder.encode(list, forKey: "list")
-		}
-		if num != nil{
-			aCoder.encode(num, forKey: "num")
-		}
-		if phoneStatus != nil{
-			aCoder.encode(phoneStatus, forKey: "phoneStatus")
-		}
-		if rankList != nil{
-			aCoder.encode(rankList, forKey: "rankList")
-		}
-		if remarkName != nil{
-			aCoder.encode(remarkName, forKey: "remarkName")
-		}
-		if safe != nil{
-			aCoder.encode(safe, forKey: "safe")
-		}
-		if secondToken != nil{
-			aCoder.encode(secondToken, forKey: "secondToken")
-		}
-		if shop != nil{
-			aCoder.encode(shop, forKey: "shop")
-		}
-		if skin != nil{
-			aCoder.encode(skin, forKey: "skin")
-		}
-		if theme != nil{
-			aCoder.encode(theme, forKey: "theme")
-		}
-		if userInfo != nil{
-			aCoder.encode(userInfo, forKey: "userInfo")
-		}
-		if vipEndtime != nil{
-			aCoder.encode(vipEndtime, forKey: "vipEndtime")
-		}
-		if worldSkin != nil{
-			aCoder.encode(worldSkin, forKey: "worldSkin")
-		}
-
-	}
-
+class User: NSObject, Model, NSSecureCoding {
+    var userId : Int!
+    var id : Int! // user_id
+    var nickname : String!
+    var sex : Int!
+    var age : Int!
+    var birthday : String!
+    var constellation : String!
+	var addr : String!
+    var avtar : String!
+    var sign : String!
+    var lvl : Int!
+    var slvl : Int!
+    var suffixLvl : Int!
+    var joinClub : Int!
+    var ifPresident : Int!
+    var ifGuard : Int!
+    var clubName : String!
+    var growup : Int!
+    var vip : Int!
+    var createTime : String!
+    var actTime : String!
+    var status : Int!
+    var avatarFrame : String!
+    var lightStatus : Int!
+    var teenagermMode : Int!
+    var diaryNum : Int!
+    var diaryNumSum : Int!
+    var hasTeenagerPassword : Int!
+    var realBirthday : String!
+    var ipAddress : String!
+    var loginSign : String!
+    var onlyPhone : Int!
+    var tags : String!
+    var message : String!
+    var ifNewUser : Int!
+    var job : String!
+    var permanentVip : Int!
+    var realNickname : String!
+    var authStatus : Int!
+    var teenagerMode : Int!
+    var hasUsedInviteCode : Int!
+    var isTeenager : Int!
+    
+    required init(jsonData: JSON) {
+        userId = jsonData["userId"].intValue
+        id = jsonData["user_id"].intValue
+        nickname = jsonData["nickname"].stringValue
+        sex = jsonData["sex"].intValue
+        age = jsonData["age"].intValue
+        birthday = jsonData["birthday"].stringValue
+        constellation = jsonData["constellation"].stringValue
+        addr = jsonData["addr"].stringValue
+        avtar = jsonData["avtar"].stringValue
+        sign = jsonData["sign"].stringValue
+        lvl = jsonData["lvl"].intValue
+        slvl = jsonData["slvl"].intValue
+        suffixLvl = jsonData["suffix_lvl"].intValue
+        joinClub = jsonData["join_club"].intValue
+        ifPresident = jsonData["ifPresident"].intValue
+        ifGuard = jsonData["ifGuard"].intValue
+        clubName = jsonData["clubName"].stringValue
+        growup = jsonData["growup"].intValue
+        vip = jsonData["vip"].intValue
+        createTime = jsonData["create_time"].stringValue
+        actTime = jsonData["act_time"].stringValue
+        status = jsonData["status"].intValue
+        avatarFrame = jsonData["avatarFrame"].stringValue
+        lightStatus = jsonData["lightStatus"].intValue
+        teenagermMode = jsonData["teenager_mode"].intValue
+        diaryNum = jsonData["diaryNum"].intValue
+        diaryNumSum = jsonData["diaryNumSum"].intValue
+        hasTeenagerPassword = jsonData["hasTeenagerPassword"].intValue
+        realBirthday = jsonData["real_birthday"].stringValue
+        ipAddress = jsonData["ipAddress"].stringValue
+        loginSign = jsonData["loginSign"].stringValue
+        onlyPhone = jsonData["onlyPhone"].intValue
+        tags = jsonData["tags"].stringValue
+        message = jsonData["message"].stringValue
+        ifNewUser = jsonData["ifNewUser"].intValue
+        job = jsonData["job"].stringValue
+        permanentVip = jsonData["permanentVip"].intValue
+        realNickname = jsonData["realNickname"].stringValue
+        teenagerMode = jsonData["teenagerMode"].intValue
+        isTeenager = jsonData["isTeenager"].intValue
+    }
+    
+    static var supportsSecureCoding: Bool = true
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(userId, forKey: "userId")
+        coder.encode(id, forKey: "user_id")
+        coder.encode(nickname, forKey: "nickname")
+        coder.encode(sex, forKey: "sex")
+        coder.encode(age, forKey: "age")
+        coder.encode(birthday, forKey: "birthday")
+        coder.encode(constellation, forKey: "constellation")
+        coder.encode(addr, forKey: "addr")
+        coder.encode(avtar, forKey: "avtar")
+        coder.encode(sign, forKey: "sign")
+        coder.encode(lvl, forKey: "lvl")
+        coder.encode(slvl, forKey: "slvl")
+        coder.encode(suffixLvl, forKey: "suffix_lvl")
+        coder.encode(joinClub, forKey: "join_club")
+        coder.encode(ifPresident, forKey: "ifPresident")
+        coder.encode(ifGuard, forKey: "ifGuard")
+        coder.encode(clubName, forKey: "clubName")
+        coder.encode(growup, forKey: "growup")
+        coder.encode(vip, forKey: "vip")
+        coder.encode(createTime, forKey: "create_time")
+        coder.encode(actTime, forKey: "act_time")
+        coder.encode(status, forKey: "status")
+        coder.encode(avatarFrame, forKey: "avatarFrame")
+        coder.encode(lightStatus, forKey: "lightStatus")
+        coder.encode(teenagermMode, forKey: "teenager_mode")
+        coder.encode(diaryNum, forKey: "diaryNum")
+        coder.encode(diaryNumSum, forKey: "diaryNumSum")
+        coder.encode(hasTeenagerPassword, forKey: "hasTeenagerPassword")
+        coder.encode(realBirthday, forKey: "real_birthday")
+        coder.encode(ipAddress, forKey: "ipAddress")
+        coder.encode(loginSign, forKey: "loginSign")
+        coder.encode(onlyPhone, forKey: "onlyPhone")
+        coder.encode(tags, forKey: "tags")
+        coder.encode(message, forKey: "message")
+        coder.encode(ifNewUser, forKey: "ifNewUser")
+        coder.encode(job, forKey: "job")
+        coder.encode(permanentVip, forKey: "permanentVip")
+        coder.encode(realNickname, forKey: "realNickname")
+        coder.encode(teenagerMode, forKey: "teenagerMode")
+        coder.encode(isTeenager, forKey: "isTeenager")
+    }
+    
+    required init?(coder: NSCoder) {
+        userId = coder.decodeObject(forKey: "userId") as? Int
+        id = coder.decodeObject(forKey: "user_id") as? Int
+        nickname = coder.decodeObject(forKey: "nickname") as? String
+        sex = coder.decodeObject(forKey: "sex") as? Int
+        age = coder.decodeObject(forKey: "age") as? Int
+        birthday = coder.decodeObject(forKey: "birthday") as? String
+        constellation = coder.decodeObject(forKey: "constellation") as? String
+        addr = coder.decodeObject(forKey: "addr") as? String
+        avtar = coder.decodeObject(forKey: "avtar") as? String
+        sign = coder.decodeObject(forKey: "sign") as? String
+        lvl = coder.decodeObject(forKey: "lvl") as? Int
+        slvl = coder.decodeObject(forKey: "slvl") as? Int
+        suffixLvl = coder.decodeObject(forKey: "suffix_lvl") as? Int
+        joinClub = coder.decodeObject(forKey: "join_club") as? Int
+        ifPresident = coder.decodeObject(forKey: "ifPresident") as? Int
+        ifGuard = coder.decodeObject(forKey: "ifGuard") as? Int
+        clubName = coder.decodeObject(forKey: "clubName") as? String
+        growup = coder.decodeObject(forKey: "growup") as? Int
+        vip = coder.decodeObject(forKey: "vip") as? Int
+        createTime = coder.decodeObject(forKey: "create_time") as? String
+        actTime = coder.decodeObject(forKey: "act_time") as? String
+        status = coder.decodeObject(forKey: "status") as? Int
+        avatarFrame = coder.decodeObject(forKey: "avatarFrame") as? String
+        lightStatus = coder.decodeObject(forKey: "lightStatus") as? Int
+        teenagermMode = coder.decodeObject(forKey: "teenager_mode") as? Int
+        diaryNum = coder.decodeObject(forKey: "diaryNum") as? Int
+        diaryNumSum = coder.decodeObject(forKey: "diaryNumSum") as? Int
+        hasTeenagerPassword = coder.decodeObject(forKey: "hasTeenagerPassword") as? Int
+        realBirthday = coder.decodeObject(forKey: "real_birthday") as? String
+        ipAddress = coder.decodeObject(forKey: "ipAddress") as? String
+        loginSign = coder.decodeObject(forKey: "loginSign") as? String
+        onlyPhone = coder.decodeObject(forKey: "onlyPhone") as? Int
+        tags = coder.decodeObject(forKey: "tags") as? String
+        message = coder.decodeObject(forKey: "message") as? String
+        ifNewUser = coder.decodeObject(forKey: "ifNewUser") as? Int
+        job = coder.decodeObject(forKey: "job") as? String
+        permanentVip = coder.decodeObject(forKey: "permanentVip") as? Int
+        realNickname = coder.decodeObject(forKey: "realNickname") as? String
+        teenagerMode = coder.decodeObject(forKey: "teenagerMode") as? Int
+        isTeenager = coder.decodeObject(forKey: "isTeenager") as? Int
+    }
 }

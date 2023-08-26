@@ -58,8 +58,18 @@ class BaseViewController: UIViewController {
         
         navigationView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.left.equalTo(60)
-            make.right.equalTo(-60)
+            // 方法一:
+//            make.left.equalTo(navigationView.snp_leftMargin).offset(60)
+//            make.right.equalTo(navigationView.snp_rightMargin).offset(-60)
+            
+            // 方法二:
+//            make.left.equalTo(60).priority(999)
+//            make.right.equalTo(-60).priority(999)
+            
+            // 方法三:
+            make.width.equalTo(UIDevice.kScreenWidth - 120)
+            make.centerX.equalTo(view)
+            
             make.centerY.equalTo(leftButton)
         }
         

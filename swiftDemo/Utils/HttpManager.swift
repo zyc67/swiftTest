@@ -46,6 +46,24 @@ class HttpManager {
         }
     }
     
+    @discardableResult func v1_post(path: String, method: HTTPMethod = .post, parameters: Parameters?, completed: @escaping NetworkRequestCompletion) -> DataRequest {
+        ZYCLog("-----------------V1 POST REQUEST BEGIN-----------------")
+        ZYCLog("path: \(path)")
+        ZYCLog("method: \(method.rawValue)")
+        ZYCLog("parameters: \(String(describing: parameters))")
+        ZYCLog("headers: \(getV1Header())")
+        
+        return sessionManager.request(path, method: method, parameters: parameters, encoding: JSONEncoding(), headers: getV1Header()).responseData { response in
+            switch response.result {
+            case .success(let data):
+                completed(.success(data))
+            case .failure(let error):
+                completed(.failure(error))
+            }
+            ZYCLog("-----------------V1 POST REQUEST END-----------------")
+        }
+    }
+    
     func getParameters(parameters: Parameters?) -> Parameters {
         let ts = Date().timeStamp;
         let secret = "\(APPID)\(ts)"
@@ -81,4 +99,40 @@ class HttpManager {
             return completion("000000000000-00000000000-0000")
         }
     }
+    
+    func getV1Header() -> HTTPHeaders {
+        var headers: [String : String] = [:]
+        if UserManager.shared.loginSign != nil {
+            headers["loginSign"] = UserManager.shared.loginSign
+        }
+        headers["Host"] = "rnapi.qianyanapp.com"
+        headers["authFlag"] = "v1"
+        headers["Content-Type"] = "application/json"
+        headers["userAgent"] = "zy"
+        headers["Accept"] = "application/json"
+        headers["Authorization"] = getAuthorization()
+        return HTTPHeaders(headers)
+    }
+    
+    func getAuthorization() -> String {
+        let hsman = "iPhone"
+        let hstype = UIDevice.kOSVersion
+        let imsi = UIDevice.imsi
+        let imei = "null"
+        let ip = "0.0.0.0"
+        let lac = "17695"
+        let mac = "02:00:00:00:00:00"
+        let pname = "com.zhy.qianyan-v\(UIDevice.kVersionName)-\(UIDevice.kBuild)"
+        let width = Int(UIDevice.kScreenWidth * UIDevice.kScale)
+        let height = Int(UIDevice.kScreenHeight * UIDevice.kScale)
+        let authorization = "/\(hsman)/iOS\(hstype)/\(imsi)/\(imei)/\(ip)/\(lac)/\(mac)/\(pname)/\(width)/\(height)/\(UserManager.shared.userId ?? 0)"
+        let encodedString = authorization.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "?!@#$^&%*+,:;='\"`<>()[]{}/\\| ").inverted)
+        var base64Auth = encodedString?.data(using: .utf8)?.base64EncodedString()
+        base64Auth = base64Auth?.replacingOccurrences(of: "+", with: "-")
+        base64Auth = base64Auth?.replacingOccurrences(of: "/", with: "-")
+        let hmacSha1 = base64Auth?.hmacSha1
+        let authorizationstr = "param=\(authorization)/\(hmacSha1!)"
+        return authorizationstr
+    }
+    
 }

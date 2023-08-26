@@ -1,8 +1,10 @@
 PODS:
+  - ActiveLabel (1.1.0)
   - Alamofire (5.6.4)
   - CYLTabBarController (1.29.2):
     - CYLTabBarController/Core (= 1.29.2)
   - CYLTabBarController/Core (1.29.2)
+  - FSPagerView (0.8.3)
   - JXPagingView/Paging (2.1.2)
   - JXSegmentedView (1.3.0)
   - KeychainAccess (4.2.2)
@@ -16,8 +18,10 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - ActiveLabel
   - Alamofire
   - CYLTabBarController
+  - FSPagerView
   - JXPagingView/Paging
   - JXSegmentedView
   - KeychainAccess
@@ -30,8 +34,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ActiveLabel
     - Alamofire
     - CYLTabBarController
+    - FSPagerView
     - JXPagingView
     - JXSegmentedView
     - KeychainAccess
@@ -43,8 +49,10 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   CYLTabBarController: db44b5901a28693a8a4279e4721b3aafdd36c178
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
@@ -55,6 +63,6 @@ SPEC CHECKSUMS:
   SwiftyRSA: 8c6dd1ea7db1b8dc4fb517a202f88bb1354bc2c6
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 33c027e9c35d431a4155d1991c7d0d698a8db220
+PODFILE CHECKSUM: 06ee37aad75eb5391df2b317fd8d762af43fd5ad
 
 COCOAPODS: 1.12.1

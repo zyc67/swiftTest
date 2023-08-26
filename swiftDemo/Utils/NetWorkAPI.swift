@@ -18,6 +18,7 @@ enum Interface: String, URLConfig {
     case startupInterface = "/api/startup"
     case updateVersionInterface = "/api/updateselfNew";
     case v2SmsGetverifyCodeInterface = "/v2/common/sms/getverifycode";
+    case diaryScrapListInterface = "/api/searchDiaryScrap"
     
     func getPath() -> String {
         return "\(baseURL)\(self.rawValue)"
@@ -46,7 +47,30 @@ class NetWorkAPI {
         HttpManager.shared.post(path: url, parameters: parameters, headers: getHeaders(host: "login.qianyanapp.com", authFlag: "v2", loginSign: nil, authorization: nil)) { response in
             switch response {
             case .success(let data):
-                let dict: [String: Any] = data.dataToDictionary!
+                let dict: [String: Any] = data.dataToJson as? [String: Any] ?? [:]
+                ZYCLog(dict)
+                success(dict)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
+    /**获取首页最新 热门 关注数据
+     p 是    int    页数    页码从0开始，默认0
+     rn    是    int    每页显示条目数    每页显示条数，默认10 最大20
+     order_type    是    int    查询类型    0：最新 1 热门 2关注 3模糊查询
+     order    是    int    排序类型    和查询类型一一对应，1：降序 0：升序，默认1
+     key    否    String    模糊查询字段    当order_type=3时该字段必填
+     cur_time    是    Long    首页数据访问时间戳    时间戳13位毫秒级 查询时间戳每次上拉取最新时间，如进入下一页还是这个时间戳
+     item_id    否    Long    访问大于第二页时传入的最后一个item_id    这里取浅记或手帐id
+     */
+    static func diaryScrapList(page: Int, orderType: Int, order: Int, key: String, itemId: String, curTime: CLongLong, success: @escaping ([String: Any]) -> Void, failure: @escaping (Error) -> Void) {
+        let parmas = ["p": page, "rn": 10, "order_type": orderType, "order": order, "key": key, "item_id": itemId, "cur_time": curTime] as [String : Any];
+        HttpManager.shared.v1_post(path: Interface.diaryScrapListInterface.getPath(), parameters: parmas) { response in
+            switch response {
+            case .success(let data):
+                let dict: [String: Any] = data.dataToJson as? [String: Any] ?? [:]
                 ZYCLog(dict)
                 success(dict)
             case .failure(let error):
@@ -130,7 +154,7 @@ class NetWorkAPI {
         HttpManager.shared.post(path: Interface.v2SmsGetverifyCodeInterface.getPath(), parameters: parameters, headers: getHeaders(host: "sms.qianyanapp.com", authFlag: "v2", loginSign: nil, authorization: nil)) { response in
             switch response {
             case .success(let data):
-                ZYCLog(data.dataToDictionary as Any)
+                ZYCLog(data.dataToJson as? [String: Any])
             case .failure(let error):
                 ZYCLog(error)
             }

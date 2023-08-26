@@ -8,11 +8,19 @@
 import Foundation
 
 extension Data {
-    var dataToDictionary: Dictionary<String, Any>? {
+//    var dataToDictionary: [String: Any]? {
+//        do {
+//            let json = try JSONSerialization.jsonObject(with: self, options: .mutableContainers)
+//            let dict = json as? [String: Any]
+//            return dict
+//        } catch {
+//            return nil
+//        }
+//    }
+    
+    var dataToJson: Any? {
         do {
-            let json = try JSONSerialization.jsonObject(with: self, options: .mutableContainers)
-            let dict = json as! Dictionary<String, Any>
-            return dict
+            return try JSONSerialization.jsonObject(with: self, options: .mutableContainers)
         } catch {
             return nil
         }

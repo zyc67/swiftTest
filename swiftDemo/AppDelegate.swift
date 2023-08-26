@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainVc = BaseTabBarController()
         self.window = UIWindow()
         self.window?.frame = UIScreen.main.bounds
-        self.window?.rootViewController = BaseNavigationController(rootViewController: mainVc)
+        let nav = BaseNavigationController(rootViewController: mainVc)
+        nav.isNavigationBarHidden = true
+        self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         
         return true

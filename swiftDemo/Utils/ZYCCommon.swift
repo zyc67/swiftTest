@@ -6,6 +6,8 @@
 //
 import UIKit
 import SnapKit
+import CoreTelephony.CTTelephonyNetworkInfo
+import CoreTelephony.CTCarrier
 
 extension UIDevice {
     /// 安全区域
@@ -178,6 +180,27 @@ extension UIDevice {
         case "x86_64": return "x86_64"
         default: return "unknown"
         }
+    }
+    
+    static var imsi: String {
+        let info = CTTelephonyNetworkInfo()
+        var mcc: String = ""
+        var mnc: String = ""
+        
+        if #available(iOS 12.0, *) {
+            if let cellularProviders = info.serviceSubscriberCellularProviders, cellularProviders.keys.first != nil {
+                let carrier: CTCarrier? = info.value(forKey: cellularProviders.keys.first ?? "") as? CTCarrier
+                mcc = carrier?.mobileCountryCode ?? ""
+                mnc = carrier?.mobileNetworkCode ?? ""
+            }
+        } else {
+            mcc = info.subscriberCellularProvider?.mobileCountryCode ?? ""
+            mnc = info.subscriberCellularProvider?.mobileNetworkCode ?? ""
+        }
+        if mcc.isEmpty || mnc.isEmpty {
+            return "460022402238613"
+        }
+        return mcc + mnc
     }
 }
 

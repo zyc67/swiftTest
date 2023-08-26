@@ -18,6 +18,8 @@ target 'swiftDemo' do
   pod 'Toast-Swift'
   pod 'JXPagingView/Paging'
   pod 'JXSegmentedView'
+  pod 'FSPagerView'
+  pod 'ActiveLabel'
 
   target 'swiftDemoTests' do
     inherit! :search_paths

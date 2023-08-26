@@ -1,20 +1,19 @@
 //
-//  ClubViewController.swift
+//  HomeFocusViewController.swift
 //  swiftDemo
 //
 //  Created by weather on 2023/8/10.
 //
 
 import UIKit
+import JXSegmentedView
 
-class ClubViewController: BaseViewController {
+class HomeFocusViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = "社团"
-        
-       
+       navigationHide = true
     }
     
 
@@ -28,4 +27,10 @@ class ClubViewController: BaseViewController {
     }
     */
 
+}
+
+extension HomeFocusViewController: JXSegmentedListContainerViewListDelegate {
+    func listView() -> UIView {
+        return view
+    }
 }
