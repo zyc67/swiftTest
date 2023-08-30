@@ -29,6 +29,7 @@ class HomeHotViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
 //        tableView.separatorStyle = .none
         tableView.register(HomeDiaryCell.self, forCellReuseIdentifier: "HomeDiaryCell")
+        tableView.register(HomeHandCell.self, forCellReuseIdentifier: "HomeHandCell")
         view.addSubview(tableView)
         return tableView
     }()
@@ -99,10 +100,17 @@ extension HomeHotViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeDiaryCell", for: indexPath) as? HomeDiaryCell
         let model: HomeListModel? = self.dataSource?[indexPath.row]
-        cell?.model = model
-        return cell!
+        if model?.type == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeDiaryCell", for: indexPath) as? HomeDiaryCell
+            cell?.model = model?.diary
+            return cell!
+        } else if model?.type == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHandCell", for: indexPath) as? HomeHandCell
+            cell?.model = model?.scrapSheet
+            return cell!
+        }
+        return UITableViewCell()
     }
 }
 

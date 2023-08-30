@@ -111,8 +111,19 @@ class DiaryModel: Model {
 }
 
 class HandModel: Model {
+    var sheetId: Int!
+    var bookId: Int!
+    var userId: Int!
+    var user: User!
+    var name: String!
+    var shotcuts: String!
     required init(jsonData: JSON) {
-        
+        sheetId = jsonData["sheet_id"].intValue
+        bookId = jsonData["book_id"].intValue
+        userId = jsonData["user_id"].intValue
+        user = User(jsonData: jsonData["user"])
+        name = jsonData["name"].stringValue
+        shotcuts = jsonData["shotcuts"][0]["img_url"].stringValue
     }
 }
 

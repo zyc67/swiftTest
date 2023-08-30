@@ -9,18 +9,46 @@ import UIKit
 import Kingfisher
 
 class HomeDiaryCell: BaseTableViewCell {
-    var model: HomeListModel? {
+    var model: DiaryModel? {
         didSet {
-            avatar.kf.setImage(with: URL(string: model?.diary?.user.avtar ?? ""))
-            nameLabel.text = model?.diary?.user.nickname
-//            contentLabel.text = model?.diary?.content
-            diaryContentView.diary = model?.diary
+            avatar.kf.setImage(with: URL(string: model?.user.avtar ?? ""))
+            nameLabel.text = model?.user.nickname
+            diaryContentView.diary = model
             
-            if model?.diary?.imgs?.count ?? 0 > 0 {
-                bannerView.dataSource = model?.diary?.imgs
+            if model?.imgs?.count ?? 0 > 0 {
+                bannerView.dataSource = model?.imgs
                 bannerView.isHidden = false
+                
+                diaryContentView.snp.remakeConstraints { make in
+                    make.left.equalTo(avatar)
+                    make.right.equalTo(nameLabel)
+                    make.top.equalTo(avatar.snp.bottom).offset(10)
+                }
+                
+                bannerView.snp.remakeConstraints { make in
+                    make.left.equalTo(avatar)
+                    make.right.equalTo(nameLabel)
+                    make.top.equalTo(diaryContentView.snp.bottom).offset(10)
+                    make.height.equalTo(220)
+                    make.bottom.equalTo(contentView.snp.bottom).offset(-16)
+                }
+                
             } else {
                 bannerView.isHidden = true
+                
+                diaryContentView.snp.remakeConstraints { make in
+                    make.left.equalTo(avatar)
+                    make.right.equalTo(nameLabel)
+                    make.top.equalTo(avatar.snp.bottom).offset(10)
+                    make.bottom.equalTo(contentView.snp.bottom).offset(-16)
+                }
+               
+                bannerView.snp.remakeConstraints { make in
+                    make.left.equalTo(avatar)
+                    make.right.equalTo(nameLabel)
+                    make.top.equalTo(diaryContentView.snp.bottom).offset(10)
+                    make.height.equalTo(0)
+                }
             }
         }
     }
@@ -41,14 +69,6 @@ class HomeDiaryCell: BaseTableViewCell {
         nameLabel.textColor = UIColor(hexString: "#333333")
         return nameLabel
     }()
-    
-//    lazy var contentLabel: UILabel = {
-//        let contentLabel = UILabel()
-//        contentLabel.font = UIFont.systemFont(ofSize: 16)
-//        contentLabel.textColor = UIColor(hexString: "#333333")
-//        contentLabel.numberOfLines = 0
-//        return contentLabel
-//    }()
     
     lazy var diaryContentView: DiaryContentView = {
         let diaryContentView = DiaryContentView()
@@ -76,13 +96,6 @@ class HomeDiaryCell: BaseTableViewCell {
             make.centerY.equalTo(avatar.snp.centerY)
         }
         
-//        contentView.addSubview(contentLabel)
-//        contentLabel.snp.makeConstraints { make in
-//            make.left.equalTo(avatar)
-//            make.right.equalTo(nameLabel)
-//            make.top.equalTo(avatar.snp.bottom).offset(10)
-//        }
-        
         contentView.addSubview(diaryContentView)
         diaryContentView.snp.makeConstraints { make in
             make.left.equalTo(avatar)
@@ -95,9 +108,7 @@ class HomeDiaryCell: BaseTableViewCell {
             make.left.equalTo(avatar)
             make.right.equalTo(nameLabel)
             make.top.equalTo(diaryContentView.snp.bottom).offset(10)
-//            make.top.equalTo(contentLabel.snp.bottom).offset(10)
             make.height.equalTo(220)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-16)
         }
         bannerView.tapClick = { imageModel, index in
             print(imageModel.imgUrl!, index)
