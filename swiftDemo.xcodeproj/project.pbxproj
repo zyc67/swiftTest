@@ -49,6 +49,8 @@
 		23E224412A56BB6E008AC83A /* NetWorkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E224402A56BB6E008AC83A /* NetWorkAPI.swift */; };
 		23E7E7172A9F13B40083FE90 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7E7162A9F13B40083FE90 /* BaseCollectionViewCell.swift */; };
 		23E7E7192A9F14350083FE90 /* HomeTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7E7182A9F14350083FE90 /* HomeTopicCell.swift */; };
+		23E7E71B2A9F1DE10083FE90 /* HomeTopicResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7E71A2A9F1DE10083FE90 /* HomeTopicResourceCell.swift */; };
+		23E7E71D2A9F1FA40083FE90 /* NonFullScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7E71C2A9F1FA40083FE90 /* NonFullScreenLayout.swift */; };
 		4894CBBD7F961FE55D8AEE63 /* Pods_swiftDemo_swiftDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E15BE465F2A87354BD1F7E7 /* Pods_swiftDemo_swiftDemoUITests.framework */; };
 		9817967915F407F26766863E /* Pods_swiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FD46CD0488ABAF76F1208F /* Pods_swiftDemoTests.framework */; };
 		B26DB70DB30155FE3A1D1172 /* Pods_swiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0348865ACC26E3B7F96A415 /* Pods_swiftDemo.framework */; };
@@ -119,6 +121,8 @@
 		23E224402A56BB6E008AC83A /* NetWorkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkAPI.swift; sourceTree = "<group>"; };
 		23E7E7162A9F13B40083FE90 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		23E7E7182A9F14350083FE90 /* HomeTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopicCell.swift; sourceTree = "<group>"; };
+		23E7E71A2A9F1DE10083FE90 /* HomeTopicResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopicResourceCell.swift; sourceTree = "<group>"; };
+		23E7E71C2A9F1FA40083FE90 /* NonFullScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonFullScreenLayout.swift; sourceTree = "<group>"; };
 		4CCD1102262D805AE0688DBF /* Pods-swiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftDemo.release.xcconfig"; path = "Target Support Files/Pods-swiftDemo/Pods-swiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		640E629996A89B0647CA1227 /* Pods-swiftDemo-swiftDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftDemo-swiftDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-swiftDemo-swiftDemoUITests/Pods-swiftDemo-swiftDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D516DA00F74A7F015BD748E /* Pods-swiftDemo-swiftDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftDemo-swiftDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-swiftDemo-swiftDemoUITests/Pods-swiftDemo-swiftDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				234E75DA2A936CD7002883C6 /* BannerView.swift */,
 				231B99F82A959A8F008BCD3F /* DiaryContentView.swift */,
 				23E7E7182A9F14350083FE90 /* HomeTopicCell.swift */,
+				23E7E71A2A9F1DE10083FE90 /* HomeTopicResourceCell.swift */,
+				23E7E71C2A9F1FA40083FE90 /* NonFullScreenLayout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -587,12 +593,14 @@
 				2341595B2A84B8CD00E6F218 /* BaseViewController.swift in Sources */,
 				23E2243F2A56B78C008AC83A /* HttpManager.swift in Sources */,
 				234159702A84DA1700E6F218 /* RefreshHeader.swift in Sources */,
+				23E7E71B2A9F1DE10083FE90 /* HomeTopicResourceCell.swift in Sources */,
 				23E7E7172A9F13B40083FE90 /* BaseCollectionViewCell.swift in Sources */,
 				23727DDF2A8A33BC00EBF53D /* HomeDiaryCell.swift in Sources */,
 				2377D0852A85DCB4006F9BF5 /* UserManager.swift in Sources */,
 				23D5DDC72A67CE37003AE711 /* User.swift in Sources */,
 				2302AA052A53D03200ABABE3 /* MZRSA.swift in Sources */,
 				236D46ED2A4E6A6700F26916 /* DateUtils.swift in Sources */,
+				23E7E71D2A9F1FA40083FE90 /* NonFullScreenLayout.swift in Sources */,
 				234159742A84EAAF00E6F218 /* FileUtils.swift in Sources */,
 				23A456FA2A3DA54100A2310F /* ZYCNetWork.swift in Sources */,
 				234159592A84B85200E6F218 /* BaseTabBarController.swift in Sources */,

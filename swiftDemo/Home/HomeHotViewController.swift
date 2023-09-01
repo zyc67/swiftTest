@@ -30,6 +30,7 @@ class HomeHotViewController: BaseViewController {
 //        tableView.separatorStyle = .none
         tableView.register(HomeDiaryCell.self, forCellReuseIdentifier: "HomeDiaryCell")
         tableView.register(HomeHandCell.self, forCellReuseIdentifier: "HomeHandCell")
+        tableView.register(HomeTopicResourceCell.self, forCellReuseIdentifier: "HomeTopicResourceCell")
         view.addSubview(tableView)
         return tableView
     }()
@@ -109,6 +110,20 @@ extension HomeHotViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHandCell", for: indexPath) as? HomeHandCell
             cell?.model = model?.scrapSheet
             return cell!
+        } else if model?.type == 3 {
+            
+        } else if model?.type == 100 {
+            if model?.resourceData?.resourceCode == 101 {
+                
+            } else if model?.resourceData?.resourceCode == 102 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTopicResourceCell", for: indexPath) as? HomeTopicResourceCell
+                cell?.dataSource = model?.resourceData?.dataList as? [TopicModel]
+                return cell!
+            } else if model?.resourceData?.resourceCode == 104 {
+                
+            } else if model?.resourceData?.resourceCode == 105 || model?.resourceData?.resourceCode == 106 || model?.resourceData?.resourceCode == 107 {
+                
+            }
         }
         return UITableViewCell()
     }

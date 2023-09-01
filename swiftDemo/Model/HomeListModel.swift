@@ -58,7 +58,7 @@ class DiaryModel: Model {
     var audioContent: String!
     var translate: Int!
     var translateJson: String!
-    var imgs: Array<ImageModel>?
+    var imgs: [ImageModel]?
     
     var analyzeContent: (String, [[String: Any]]?, [[String: Any]]?)
     var translateSrcOne: String?
@@ -134,8 +134,21 @@ class AdvertModel: Model {
 }
 
 class ResourceModel: Model {
+    var resourceCode: Int!
+    var resourceName: String!
+    var dataList: [Any]?
     required init(jsonData: JSON) {
-        
+        // 资源位代码 101文集 102话题推荐 103明星榜 104精选手帐 105热门社团 106新社团 107周榜社团
+        resourceCode = jsonData["resourceCode"].intValue
+        resourceName = jsonData["resourceName"].stringValue
+        dataList = jsonData["dataList"].array?.map({
+            if resourceCode == 101 {
+                return $0
+            } else if resourceCode == 102 {
+                return TopicModel(jsonData: $0)
+            }
+            return $0
+        })
     }
 }
 
@@ -147,5 +160,18 @@ class ImageModel: Model {
         id = jsonData["id"].intValue
         imgUrl = jsonData["img_url"].stringValue
         imgSuffix = jsonData["img_suffix"].stringValue
+    }
+}
+
+class TopicModel: Model {
+    var talkId: Int!
+    var diaryId: Int!
+    var name: String!
+    var iconUrl: String!
+    required init(jsonData: JSON) {
+        talkId = jsonData["talk_id"].intValue
+        diaryId = jsonData["diary_id"].intValue
+        name = jsonData["name"].stringValue
+        iconUrl = jsonData["icon_url"].stringValue
     }
 }
