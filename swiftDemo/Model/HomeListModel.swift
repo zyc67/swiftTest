@@ -146,6 +146,8 @@ class ResourceModel: Model {
                 return $0
             } else if resourceCode == 102 {
                 return TopicModel(jsonData: $0)
+            } else if resourceCode == 104 {
+                return ScrapModel(jsonData: $0)
             }
             return $0
         })
@@ -173,5 +175,18 @@ class TopicModel: Model {
         diaryId = jsonData["diary_id"].intValue
         name = jsonData["name"].stringValue
         iconUrl = jsonData["icon_url"].stringValue
+    }
+}
+
+class ScrapModel: Model {
+    var sheetId: Int!
+    var bookId: Int!
+    var imgUrl: String!
+    var title: String!
+    required init(jsonData: JSON) {
+        sheetId = jsonData["sheet_id"].intValue
+        bookId = jsonData["book_id"].intValue
+        imgUrl = jsonData["imgUrl"].stringValue
+        title = jsonData["title"].stringValue
     }
 }

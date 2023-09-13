@@ -1,18 +1,17 @@
 //
-//  HomeTopicCell.swift
+//  HomeScrapCell.swift
 //  swiftDemo
 //
-//  Created by weather on 2023/8/30.
+//  Created by weather on 2023/9/1.
 //
 
 import UIKit
 
-class HomeTopicCell: BaseCollectionViewCell {
-    
-    var model: TopicModel? {
+class HomeScrapCell: BaseCollectionViewCell {
+    var model: ScrapModel? {
         didSet {
-            icon.kf.setImage(with: URL(string: model?.iconUrl ?? ""))
-            nameLabel.text = model?.name
+            icon.kf.setImage(with: URL(string: model?.imgUrl ?? ""))
+            nameLabel.text = model?.title
         }
     }
     
@@ -28,22 +27,25 @@ class HomeTopicCell: BaseCollectionViewCell {
         let nameLabel = UILabel()
         nameLabel.font = UIFont.systemFont(ofSize: 15)
         nameLabel.textColor = UIColor(hexString: "#333333")
+        nameLabel.textAlignment = .center
         return nameLabel
     }()
     
     override func initUI() {
+       
         contentView.addSubview(icon)
         icon.snp.makeConstraints { make in
-            make.left.equalTo(16)
-            make.centerY.equalTo(contentView)
+            make.top.equalTo(10)
+            make.centerX.equalTo(contentView)
             make.width.height.equalTo(44)
         }
         
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
-            make.left.equalTo(icon.snp.right).offset(10)
-            make.right.lessThanOrEqualTo(-16)
-            make.centerY.equalTo(contentView)
+            make.left.equalTo(2)
+            make.right.equalTo(-2)
+            make.centerX.equalTo(contentView)
+            make.top.equalTo(icon.snp.bottom).offset(6)
         }
     }
 }

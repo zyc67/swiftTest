@@ -44,6 +44,9 @@
 		2377D0872A86250D006F9BF5 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2377D0862A86250D006F9BF5 /* HomeListModel.swift */; };
 		238816A82A26D7990004432B /* ZYCCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238816A72A26D7990004432B /* ZYCCommon.swift */; };
 		23A456FA2A3DA54100A2310F /* ZYCNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A456F92A3DA54100A2310F /* ZYCNetWork.swift */; };
+		23AC66F02AA1DE2500D6B78A /* HomeScrapResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC66EF2AA1DE2500D6B78A /* HomeScrapResourceCell.swift */; };
+		23AC66F22AA1DE4500D6B78A /* HomeScrapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC66F12AA1DE4500D6B78A /* HomeScrapCell.swift */; };
+		23BF71C72AAEF2A400EDF196 /* HorizontalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF71C62AAEF2A400EDF196 /* HorizontalLayout.swift */; };
 		23D5DDC72A67CE37003AE711 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D5DDB92A67CE37003AE711 /* User.swift */; };
 		23E2243F2A56B78C008AC83A /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2243E2A56B78C008AC83A /* HttpManager.swift */; };
 		23E224412A56BB6E008AC83A /* NetWorkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E224402A56BB6E008AC83A /* NetWorkAPI.swift */; };
@@ -116,6 +119,9 @@
 		2377D0862A86250D006F9BF5 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		238816A72A26D7990004432B /* ZYCCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCCommon.swift; sourceTree = "<group>"; };
 		23A456F92A3DA54100A2310F /* ZYCNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCNetWork.swift; sourceTree = "<group>"; };
+		23AC66EF2AA1DE2500D6B78A /* HomeScrapResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrapResourceCell.swift; sourceTree = "<group>"; };
+		23AC66F12AA1DE4500D6B78A /* HomeScrapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrapCell.swift; sourceTree = "<group>"; };
+		23BF71C62AAEF2A400EDF196 /* HorizontalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLayout.swift; sourceTree = "<group>"; };
 		23D5DDB92A67CE37003AE711 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23E2243E2A56B78C008AC83A /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		23E224402A56BB6E008AC83A /* NetWorkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkAPI.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 				234159512A84B74200E6F218 /* Base */,
 				2341594E2A847AD100E6F218 /* Utils */,
 				23D5DDAC2A67C179003AE711 /* Model */,
+				238A18962AB19EE900A491E9 /* CollectionViewLayout */,
 				234159522A84B75F00E6F218 /* Home */,
 				234159532A84B76D00E6F218 /* Club */,
 				234159642A84B98800E6F218 /* Publish */,
@@ -282,7 +289,8 @@
 				231B99F82A959A8F008BCD3F /* DiaryContentView.swift */,
 				23E7E7182A9F14350083FE90 /* HomeTopicCell.swift */,
 				23E7E71A2A9F1DE10083FE90 /* HomeTopicResourceCell.swift */,
-				23E7E71C2A9F1FA40083FE90 /* NonFullScreenLayout.swift */,
+				23AC66EF2AA1DE2500D6B78A /* HomeScrapResourceCell.swift */,
+				23AC66F12AA1DE4500D6B78A /* HomeScrapCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -317,6 +325,15 @@
 				234159652A84B9A200E6F218 /* PublishViewController.swift */,
 			);
 			path = Publish;
+			sourceTree = "<group>";
+		};
+		238A18962AB19EE900A491E9 /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				23BF71C62AAEF2A400EDF196 /* HorizontalLayout.swift */,
+				23E7E71C2A9F1FA40083FE90 /* NonFullScreenLayout.swift */,
+			);
+			path = CollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		23D5DDAC2A67C179003AE711 /* Model */ = {
@@ -581,10 +598,12 @@
 				2328F58F2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift in Sources */,
 				231B99F92A959A8F008BCD3F /* DiaryContentView.swift in Sources */,
 				234159632A84B91A00E6F218 /* MeViewController.swift in Sources */,
+				23AC66F02AA1DE2500D6B78A /* HomeScrapResourceCell.swift in Sources */,
 				234159502A847AE900E6F218 /* Log.swift in Sources */,
 				1847ED1429AC8EB200BCE50C /* ViewController.swift in Sources */,
 				2341596E2A84D16300E6F218 /* HomeFocusViewController.swift in Sources */,
 				235742512A987B09002C19C2 /* UILabelUtils.swift in Sources */,
+				23AC66F22AA1DE4500D6B78A /* HomeScrapCell.swift in Sources */,
 				234159662A84B9A200E6F218 /* PublishViewController.swift in Sources */,
 				23E224412A56BB6E008AC83A /* NetWorkAPI.swift in Sources */,
 				23727DDD2A8A180C00EBF53D /* BaseTableViewCell.swift in Sources */,
@@ -615,6 +634,7 @@
 				234159612A84B91000E6F218 /* MessageViewController.swift in Sources */,
 				232F59622A99D0240004ACCF /* HomeHandCell.swift in Sources */,
 				2341596C2A84D15100E6F218 /* HomeHotViewController.swift in Sources */,
+				23BF71C72AAEF2A400EDF196 /* HorizontalLayout.swift in Sources */,
 				238816A82A26D7990004432B /* ZYCCommon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

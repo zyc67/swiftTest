@@ -31,13 +31,14 @@ class HomeHotViewController: BaseViewController {
         tableView.register(HomeDiaryCell.self, forCellReuseIdentifier: "HomeDiaryCell")
         tableView.register(HomeHandCell.self, forCellReuseIdentifier: "HomeHandCell")
         tableView.register(HomeTopicResourceCell.self, forCellReuseIdentifier: "HomeTopicResourceCell")
+        tableView.register(HomeScrapResourceCell.self, forCellReuseIdentifier: "HomeScrapResourceCell")
         view.addSubview(tableView)
         return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+     
         navigationHide = true
       
         header = RefreshHeader(refreshingBlock: { [weak self] in
@@ -120,7 +121,9 @@ extension HomeHotViewController: UITableViewDataSource {
                 cell?.dataSource = model?.resourceData?.dataList as? [TopicModel]
                 return cell!
             } else if model?.resourceData?.resourceCode == 104 {
-                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeScrapResourceCell", for: indexPath) as? HomeScrapResourceCell
+                cell?.dataSource = model?.resourceData?.dataList as? [ScrapModel]
+                return cell!
             } else if model?.resourceData?.resourceCode == 105 || model?.resourceData?.resourceCode == 106 || model?.resourceData?.resourceCode == 107 {
                 
             }
