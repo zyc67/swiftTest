@@ -19,6 +19,7 @@ class HorizontalLayout: UICollectionViewFlowLayout {
         self.rowCount = rowCount
         self.columnCount = columnCount
         super.init()
+        scrollDirection = .horizontal
     }
     
     required init?(coder: NSCoder) {

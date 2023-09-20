@@ -32,6 +32,7 @@ class HomeHotViewController: BaseViewController {
         tableView.register(HomeHandCell.self, forCellReuseIdentifier: "HomeHandCell")
         tableView.register(HomeTopicResourceCell.self, forCellReuseIdentifier: "HomeTopicResourceCell")
         tableView.register(HomeScrapResourceCell.self, forCellReuseIdentifier: "HomeScrapResourceCell")
+        tableView.register(HomeCorpusResourceCell.self, forCellReuseIdentifier: "HomeCorpusResourceCell")
         view.addSubview(tableView)
         return tableView
     }()
@@ -115,7 +116,9 @@ extension HomeHotViewController: UITableViewDataSource {
             
         } else if model?.type == 100 {
             if model?.resourceData?.resourceCode == 101 {
-                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCorpusResourceCell", for: indexPath) as? HomeCorpusResourceCell
+                cell?.dataSource = model?.resourceData?.dataList as? [CorpusModel]
+                return cell!
             } else if model?.resourceData?.resourceCode == 102 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTopicResourceCell", for: indexPath) as? HomeTopicResourceCell
                 cell?.dataSource = model?.resourceData?.dataList as? [TopicModel]

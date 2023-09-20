@@ -11,6 +11,11 @@ class NonFullScreenLayout: UICollectionViewFlowLayout {
     
     var lastOffset = CGPointZero
     
+    override func prepare() {
+        super.prepare()
+        scrollDirection = .horizontal
+    }
+    
     // velocity.x == 0 拖动，!= 0 滑动
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         // 分页的宽度

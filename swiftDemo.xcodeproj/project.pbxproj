@@ -19,6 +19,7 @@
 		231B99F92A959A8F008BCD3F /* DiaryContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231B99F82A959A8F008BCD3F /* DiaryContentView.swift */; };
 		2328F58F2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328F58E2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift */; };
 		232F59622A99D0240004ACCF /* HomeHandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F59612A99D0240004ACCF /* HomeHandCell.swift */; };
+		233679EC2AB2A742006271F4 /* LineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233679EB2AB2A742006271F4 /* LineLayout.swift */; };
 		234159502A847AE900E6F218 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341594F2A847AE900E6F218 /* Log.swift */; };
 		234159572A84B81B00E6F218 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159562A84B81B00E6F218 /* BaseNavigationController.swift */; };
 		234159592A84B85200E6F218 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234159582A84B85200E6F218 /* BaseTabBarController.swift */; };
@@ -43,6 +44,8 @@
 		2377D0852A85DCB4006F9BF5 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2377D0842A85DCB4006F9BF5 /* UserManager.swift */; };
 		2377D0872A86250D006F9BF5 /* HomeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2377D0862A86250D006F9BF5 /* HomeListModel.swift */; };
 		238816A82A26D7990004432B /* ZYCCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238816A72A26D7990004432B /* ZYCCommon.swift */; };
+		238A18982AB19FD900A491E9 /* HomeCorpusResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A18972AB19FD900A491E9 /* HomeCorpusResourceCell.swift */; };
+		238A189A2AB19FFA00A491E9 /* HomeCorpusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A18992AB19FFA00A491E9 /* HomeCorpusCell.swift */; };
 		23A456FA2A3DA54100A2310F /* ZYCNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A456F92A3DA54100A2310F /* ZYCNetWork.swift */; };
 		23AC66F02AA1DE2500D6B78A /* HomeScrapResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC66EF2AA1DE2500D6B78A /* HomeScrapResourceCell.swift */; };
 		23AC66F22AA1DE4500D6B78A /* HomeScrapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC66F12AA1DE4500D6B78A /* HomeScrapCell.swift */; };
@@ -93,6 +96,7 @@
 		231B99F82A959A8F008BCD3F /* DiaryContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContentView.swift; sourceTree = "<group>"; };
 		2328F58E2A3C5E8000F2C0E6 /* ZYCNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCNetWorkTools.swift; sourceTree = "<group>"; };
 		232F59612A99D0240004ACCF /* HomeHandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHandCell.swift; sourceTree = "<group>"; };
+		233679EB2AB2A742006271F4 /* LineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLayout.swift; sourceTree = "<group>"; };
 		2341594F2A847AE900E6F218 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		234159562A84B81B00E6F218 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		234159582A84B85200E6F218 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 		2377D0842A85DCB4006F9BF5 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2377D0862A86250D006F9BF5 /* HomeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListModel.swift; sourceTree = "<group>"; };
 		238816A72A26D7990004432B /* ZYCCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCCommon.swift; sourceTree = "<group>"; };
+		238A18972AB19FD900A491E9 /* HomeCorpusResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCorpusResourceCell.swift; sourceTree = "<group>"; };
+		238A18992AB19FFA00A491E9 /* HomeCorpusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCorpusCell.swift; sourceTree = "<group>"; };
 		23A456F92A3DA54100A2310F /* ZYCNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCNetWork.swift; sourceTree = "<group>"; };
 		23AC66EF2AA1DE2500D6B78A /* HomeScrapResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrapResourceCell.swift; sourceTree = "<group>"; };
 		23AC66F12AA1DE4500D6B78A /* HomeScrapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrapCell.swift; sourceTree = "<group>"; };
@@ -287,10 +293,12 @@
 				232F59612A99D0240004ACCF /* HomeHandCell.swift */,
 				234E75DA2A936CD7002883C6 /* BannerView.swift */,
 				231B99F82A959A8F008BCD3F /* DiaryContentView.swift */,
-				23E7E7182A9F14350083FE90 /* HomeTopicCell.swift */,
 				23E7E71A2A9F1DE10083FE90 /* HomeTopicResourceCell.swift */,
+				23E7E7182A9F14350083FE90 /* HomeTopicCell.swift */,
 				23AC66EF2AA1DE2500D6B78A /* HomeScrapResourceCell.swift */,
 				23AC66F12AA1DE4500D6B78A /* HomeScrapCell.swift */,
+				238A18972AB19FD900A491E9 /* HomeCorpusResourceCell.swift */,
+				238A18992AB19FFA00A491E9 /* HomeCorpusCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 			children = (
 				23BF71C62AAEF2A400EDF196 /* HorizontalLayout.swift */,
 				23E7E71C2A9F1FA40083FE90 /* NonFullScreenLayout.swift */,
+				233679EB2AB2A742006271F4 /* LineLayout.swift */,
 			);
 			path = CollectionViewLayout;
 			sourceTree = "<group>";
@@ -599,7 +608,9 @@
 				231B99F92A959A8F008BCD3F /* DiaryContentView.swift in Sources */,
 				234159632A84B91A00E6F218 /* MeViewController.swift in Sources */,
 				23AC66F02AA1DE2500D6B78A /* HomeScrapResourceCell.swift in Sources */,
+				238A18982AB19FD900A491E9 /* HomeCorpusResourceCell.swift in Sources */,
 				234159502A847AE900E6F218 /* Log.swift in Sources */,
+				238A189A2AB19FFA00A491E9 /* HomeCorpusCell.swift in Sources */,
 				1847ED1429AC8EB200BCE50C /* ViewController.swift in Sources */,
 				2341596E2A84D16300E6F218 /* HomeFocusViewController.swift in Sources */,
 				235742512A987B09002C19C2 /* UILabelUtils.swift in Sources */,
@@ -622,6 +633,7 @@
 				23E7E71D2A9F1FA40083FE90 /* NonFullScreenLayout.swift in Sources */,
 				234159742A84EAAF00E6F218 /* FileUtils.swift in Sources */,
 				23A456FA2A3DA54100A2310F /* ZYCNetWork.swift in Sources */,
+				233679EC2AB2A742006271F4 /* LineLayout.swift in Sources */,
 				234159592A84B85200E6F218 /* BaseTabBarController.swift in Sources */,
 				234159572A84B81B00E6F218 /* BaseNavigationController.swift in Sources */,
 				234159722A84DA2B00E6F218 /* RefreshFooter.swift in Sources */,

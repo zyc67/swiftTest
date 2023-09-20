@@ -20,7 +20,6 @@ class HomeScrapResourceCell: BaseTableViewCell {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: UIDevice.kScreenWidth / 3, height: 80)
-        layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true

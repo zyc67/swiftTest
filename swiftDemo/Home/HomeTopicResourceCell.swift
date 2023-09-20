@@ -20,7 +20,6 @@ class HomeTopicResourceCell: BaseTableViewCell {
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSize(width: UIDevice.kScreenWidth - 100, height: 44)
-        layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self

@@ -143,7 +143,7 @@ class ResourceModel: Model {
         resourceName = jsonData["resourceName"].stringValue
         dataList = jsonData["dataList"].array?.map({
             if resourceCode == 101 {
-                return $0
+                return CorpusModel(jsonData: $0)
             } else if resourceCode == 102 {
                 return TopicModel(jsonData: $0)
             } else if resourceCode == 104 {
@@ -162,6 +162,19 @@ class ImageModel: Model {
         id = jsonData["id"].intValue
         imgUrl = jsonData["img_url"].stringValue
         imgSuffix = jsonData["img_suffix"].stringValue
+    }
+}
+
+class CorpusModel: Model {
+    var collId: Int!
+    var userId: Int!
+    var iconUrl: String!
+    var name: String!
+    required init(jsonData: JSON) {
+        collId = jsonData["coll_id"].intValue
+        userId = jsonData["user_id"].intValue
+        iconUrl = jsonData["icon_url"].stringValue
+        name = jsonData["name"].stringValue
     }
 }
 
