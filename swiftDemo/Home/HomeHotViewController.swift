@@ -39,7 +39,8 @@ class HomeHotViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+//        testUserInfo()
+//        return
         navigationHide = true
       
         header = RefreshHeader(refreshingBlock: { [weak self] in

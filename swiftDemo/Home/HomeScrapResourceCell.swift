@@ -34,7 +34,7 @@ class HomeScrapResourceCell: BaseTableViewCell {
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
-            make.height.equalTo(180)
+            make.height.equalTo(180).priority(999)
         }
     }
 }

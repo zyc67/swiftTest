@@ -33,7 +33,7 @@ class HomeTopicResourceCell: BaseTableViewCell {
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
-            make.height.equalTo(172)
+            make.height.equalTo(172).priority(999)
         }
     }
 

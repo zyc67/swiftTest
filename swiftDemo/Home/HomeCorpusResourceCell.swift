@@ -27,7 +27,7 @@ class HomeCorpusResourceCell: BaseTableViewCell {
         let layout = LineLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.itemSize = CGSize(width: 118, height: 220)
+        layout.itemSize = CGSize(width: UIDevice.kScreenWidth / 3, height: 220)
         let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
@@ -41,7 +41,7 @@ class HomeCorpusResourceCell: BaseTableViewCell {
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
-            make.height.equalTo(240)
+            make.height.equalTo(240).priority(999)
         }
     }
 

@@ -163,6 +163,8 @@ class ImageModel: Model {
         imgUrl = jsonData["img_url"].stringValue
         imgSuffix = jsonData["img_suffix"].stringValue
     }
+    
+    required init() { }
 }
 
 class CorpusModel: Model {

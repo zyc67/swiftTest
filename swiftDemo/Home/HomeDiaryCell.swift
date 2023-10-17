@@ -7,8 +7,11 @@
 
 import UIKit
 import Kingfisher
+import SnapKit
 
 class HomeDiaryCell: BaseTableViewCell {
+    var bannerHeightConstraint: Constraint? = nil
+    
     var model: DiaryModel? {
         didSet {
             avatar.kf.setImage(with: URL(string: model?.user.avtar ?? ""))
@@ -18,37 +21,11 @@ class HomeDiaryCell: BaseTableViewCell {
             if model?.imgs?.count ?? 0 > 0 {
                 bannerView.dataSource = model?.imgs
                 bannerView.isHidden = false
-                
-                diaryContentView.snp.remakeConstraints { make in
-                    make.left.equalTo(avatar)
-                    make.right.equalTo(nameLabel)
-                    make.top.equalTo(avatar.snp.bottom).offset(10)
-                }
-                
-                bannerView.snp.remakeConstraints { make in
-                    make.left.equalTo(avatar)
-                    make.right.equalTo(nameLabel)
-                    make.top.equalTo(diaryContentView.snp.bottom).offset(10)
-                    make.height.equalTo(220)
-                    make.bottom.equalTo(contentView.snp.bottom).offset(-16)
-                }
+                bannerHeightConstraint?.update(offset: 220)
                 
             } else {
                 bannerView.isHidden = true
-                
-                diaryContentView.snp.remakeConstraints { make in
-                    make.left.equalTo(avatar)
-                    make.right.equalTo(nameLabel)
-                    make.top.equalTo(avatar.snp.bottom).offset(10)
-                    make.bottom.equalTo(contentView.snp.bottom).offset(-16)
-                }
-               
-                bannerView.snp.remakeConstraints { make in
-                    make.left.equalTo(avatar)
-                    make.right.equalTo(nameLabel)
-                    make.top.equalTo(diaryContentView.snp.bottom).offset(10)
-                    make.height.equalTo(0)
-                }
+                bannerHeightConstraint?.update(offset: 0)
             }
         }
     }
@@ -108,7 +85,8 @@ class HomeDiaryCell: BaseTableViewCell {
             make.left.equalTo(avatar)
             make.right.equalTo(nameLabel)
             make.top.equalTo(diaryContentView.snp.bottom).offset(10)
-            make.height.equalTo(220)
+            bannerHeightConstraint = make.height.equalTo(220).priority(999).constraint
+            make.bottom.equalTo(contentView.snp.bottom).offset(-16)
         }
         bannerView.tapClick = { imageModel, index in
             print(imageModel.imgUrl!, index)
