@@ -31,12 +31,12 @@ func archivedData(model: Any, fileName: String) {
         
         do {
             _ = try data.write(to: URL(fileURLWithPath: filePath))
-            ZYCLog("写入成功")
+            LogInfo("写入成功")
         } catch {
-            ZYCLog("data写入本地失败: \(error)")
+            LogError("data写入本地失败: \(error)")
         }
     } catch  {
-        ZYCLog("模型转data失败: \(error)")
+        LogError("模型转data失败: \(error)")
     }
 }
 
@@ -54,7 +54,7 @@ func archivedData(model: Any, fileName: String) {
 //        let model = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [T.self, NSNull.self], from: data) as? T
 //        return model
 //    } catch {
-//        ZYCLog("获取data数据失败: \(error)")
+//        LogError("获取data数据失败: \(error)")
 //    }
 //    return nil
 //}
@@ -74,7 +74,7 @@ func unarchiverData<T>(fileName: String) -> T? {
         let model = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? T
         return model
     } catch {
-        ZYCLog("获取data数据失败: \(error)")
+        LogError("获取data数据失败: \(error)")
     }
     return nil
 }

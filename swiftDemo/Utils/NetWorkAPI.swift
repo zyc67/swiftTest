@@ -48,7 +48,7 @@ class NetWorkAPI {
             switch response {
             case .success(let data):
                 let dict: [String: Any] = data.dataToJson as? [String: Any] ?? [:]
-                ZYCLog(dict)
+                LogInfo(dict)
                 success(dict)
             case .failure(let error):
                 failure(error)
@@ -71,7 +71,7 @@ class NetWorkAPI {
             switch response {
             case .success(let data):
                 let dict: [String: Any] = data.dataToJson as? [String: Any] ?? [:]
-                ZYCLog(dict)
+                LogInfo(dict)
                 success(dict)
             case .failure(let error):
                 failure(error)
@@ -154,9 +154,9 @@ class NetWorkAPI {
         HttpManager.shared.post(path: Interface.v2SmsGetverifyCodeInterface.getPath(), parameters: parameters, headers: getHeaders(host: "sms.qianyanapp.com", authFlag: "v2", loginSign: nil, authorization: nil)) { response in
             switch response {
             case .success(let data):
-                ZYCLog(data.dataToJson as? [String: Any])
+                LogInfo(data.dataToJson as? [String: Any])
             case .failure(let error):
-                ZYCLog(error)
+                LogError(error)
             }
         }
     }

@@ -203,10 +203,10 @@ extension DiaryContentView {
 
 //extension DiaryContentView: ActiveLabelDelegate {
 ////    func didSelect(_ text: String, type: ActiveType) {
-////        ZYCLog("---")
+////        LogInfo("---")
 ////    }
 //
 //    func didSelect(_ index: Int) {
-//        ZYCLog("---\(index)");
+//        LogInfo("---\(index)");
 //    }
 //}

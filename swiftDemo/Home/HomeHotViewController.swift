@@ -39,6 +39,7 @@ class HomeHotViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        testUserInfo()
 //        return
         navigationHide = true
@@ -89,7 +90,7 @@ class HomeHotViewController: BaseViewController {
                 self?.tableView.mj_footer?.isHidden = false
             }
         } failure: { [weak self] error in
-            ZYCLog(error)
+            LogError(error)
             self?.tableView.mj_header?.endRefreshing()
             self?.tableView.mj_footer?.endRefreshing()
             self?.tableView.mj_footer?.isHidden = self?.dataSource?.count ?? 0 == 0
@@ -146,7 +147,7 @@ extension HomeHotViewController: UITableViewDelegate {
 func testUserInfo() {
 //    var userInfo: UserInfo? = unarchiverData(fileName: "userInfo.data")
 //    UserManager.shared.user = userInfo
-//    ZYCLog(userInfo)
+//    LogInfo(userInfo)
     do {
         let clear = try ClearMessage(string: "654321", using: .utf8)
         let encrypted = try clear.encrypted(with: try PublicKey(base64Encoded: RSAPublickKey), padding: .PKCS1)
@@ -160,7 +161,7 @@ func testUserInfo() {
                 archivedData(model: user, fileName: "userInfo.data")
 
                 var userInfo: User? = unarchiverData(fileName: "userInfo.data")
-                ZYCLog(userInfo)
+                LogInfo(userInfo)
             }
         } failure: { error in
 

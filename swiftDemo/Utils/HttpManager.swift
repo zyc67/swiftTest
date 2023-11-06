@@ -29,11 +29,11 @@ class HttpManager {
     }
     
     @discardableResult func post(path: String, method: HTTPMethod = .post, parameters: Parameters?, headers: HTTPHeaders, completed: @escaping NetworkRequestCompletion) -> DataRequest {
-        ZYCLog("-----------------POST REQUEST BEGIN-----------------")
-        ZYCLog("path: \(path)")
-        ZYCLog("method: \(method.rawValue)")
-        ZYCLog("parameters: \(getParameters(parameters: parameters))")
-        ZYCLog("headers: \(headers)")
+        LogInfo("-----------------POST REQUEST BEGIN-----------------")
+        LogInfo("path: \(path)")
+        LogInfo("method: \(method.rawValue)")
+        LogInfo("parameters: \(getParameters(parameters: parameters))")
+        LogInfo("headers: \(headers)")
         
         return sessionManager.request(path, method: method, parameters: getParameters(parameters: parameters), encoding: JSONEncoding(), headers: headers).responseData { response in
             switch response.result {
@@ -42,16 +42,16 @@ class HttpManager {
             case .failure(let error):
                 completed(.failure(error))
             }
-            ZYCLog("-----------------POST REQUEST END-----------------")
+            LogInfo("-----------------POST REQUEST END-----------------")
         }
     }
     
     @discardableResult func v1_post(path: String, method: HTTPMethod = .post, parameters: Parameters?, completed: @escaping NetworkRequestCompletion) -> DataRequest {
-        ZYCLog("-----------------V1 POST REQUEST BEGIN-----------------")
-        ZYCLog("path: \(path)")
-        ZYCLog("method: \(method.rawValue)")
-        ZYCLog("parameters: \(String(describing: parameters))")
-        ZYCLog("headers: \(getV1Header())")
+        LogInfo("-----------------V1 POST REQUEST BEGIN-----------------")
+        LogInfo("path: \(path)")
+        LogInfo("method: \(method.rawValue)")
+        LogInfo("parameters: \(String(describing: parameters))")
+        LogInfo("headers: \(getV1Header())")
         
         return sessionManager.request(path, method: method, parameters: parameters, encoding: JSONEncoding(), headers: getV1Header()).responseData { response in
             switch response.result {
@@ -60,7 +60,7 @@ class HttpManager {
             case .failure(let error):
                 completed(.failure(error))
             }
-            ZYCLog("-----------------V1 POST REQUEST END-----------------")
+            LogInfo("-----------------V1 POST REQUEST END-----------------")
         }
     }
     
